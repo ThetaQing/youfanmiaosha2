@@ -15,5 +15,13 @@ public class UserDao {
 
         return userMapper.findUserByid(userid);
     }
+    public void saveUserInfo(UserInfo userInfo){
+
+        userMapper.saveUserInfo(userInfo);
+    }
+    public UserInfo findUserByAccount(String account){
+
+        return userMapper.findUserByAccount(account);
+    }
 
 }

@@ -8,7 +8,7 @@ public class UserInfo implements Serializable {
     private String encryptionPassword;  // 加密密码
     private String originalPassword;  // 未加密密码
     private int sex;  // 性别 0男1女
-    private String telephone;  // 手机号
+    private String telphone;  // 手机号
     private String birthday;  // 生日
     private String qq;  // qq
     private String weixin;  // wechat
@@ -56,12 +56,12 @@ public class UserInfo implements Serializable {
         this.sex = sex;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getTelphone() {
+        return telphone;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setTelphone(String telphone) {
+        this.telphone = telphone;
     }
 
     public String getBirthday() {

@@ -5,4 +5,15 @@
         select account,encryptionPassword,sex,telphone,qq,weixin,birthday from youfanuser where id = #{userid}
     </select>
 
+    <insert id="saveUserInfo" parameterType="com.youfan.entity.UserInfo">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into youfanuser(account,originalPassword,encryptionPassword,telphone,birthday,qq,weixin) value(#{account},#{originalPassword},#{encryptionPassword},#{telphone},#{birthday},#{qq},#{weixin})
+    </insert>
+
+    <select id="findUserByAccount" resultType="com.youfan.entity.UserInfo" parameterType="string">
+        select account,encryptionPassword from youfanuser where account = #{account}
+    </select>
+
 </mapper>

@@ -12,6 +12,7 @@
         <module>youfanRegisterCenter</module>
         <module>youfanUser</module>
         <module>youfanCommon</module>
+        <module>youfanmerchant</module>
     </modules>
     <properties>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
