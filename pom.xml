@@ -13,6 +13,7 @@
         <module>youfanUser</module>
         <module>youfanCommon</module>
         <module>youfanmerchant</module>
+        <module>youfanshop</module>
     </modules>
     <properties>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>

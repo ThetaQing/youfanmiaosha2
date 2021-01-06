@@ -16,8 +16,6 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @SpringBootApplication
-@ComponentScan(basePackages= {"com.youfan"})
-@EnableAutoConfiguration
 @EnableEurekaClient
 @MapperScan("com.youfan.mapper")
 public class YouFanUserApplication {
@@ -33,10 +31,7 @@ public class YouFanUserApplication {
 
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource());
-
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-
-
         sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mappers/*.xml"));
 
 

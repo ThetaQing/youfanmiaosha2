@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="youfanshop" />
         <module name="youfanRegisterCenter" />
         <module name="youfanUser" />
         <module name="youfanCommon" />
+        <module name="youfanmerchant" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +19,8 @@
       <module name="youfanCommon" options="-parameters" />
       <module name="youfanRegisterCenter" options="-parameters" />
       <module name="youfanUser" options="-parameters" />
+      <module name="youfanmerchant" options="-parameters" />
+      <module name="youfanshop" options="-parameters" />
     </option>
   </component>
 </project>

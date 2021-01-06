@@ -58,6 +58,8 @@ public class UserControl {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //model.addAttribute("userInfo",userRegisterForm);  // 表单中的weinxin和userInfo中的weixin是不一致的，所以在填充viewUser.html的时候会报错，
+        // 报错内容：Exception evaluating SpringEL expression: "userInfo.account" (template: "viewUser" - line 17, col 19)
         return "viewUser";
 
     }
