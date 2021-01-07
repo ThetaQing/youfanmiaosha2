@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<form action="applyProduct" th:method="post">
+    商品标题:<input th:name="productTitle"/><br/>
+    商品名称:<input th:name="productName"/><br/>
+    图片地址：<textarea th:name="productPictureUrl"></textarea><br/>
+    商品价格:<input th:name="productPriceParam"/><br/>
+    优惠价格:<input th:name="productDiscounts"/><br/>
+    商家id:<input th:name="merchantId"/><br/>
+    商品类别id:<input th:name="productTypeid"/><br/>
+    库存:<input th:name="productInventory"/><br/>
+
+    <input th:type="submit" th:value="提交">
+</form>
+<span th:text="${error}"/>
+</body>
+</html>

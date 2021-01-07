@@ -14,6 +14,8 @@
         <module>youfanCommon</module>
         <module>youfanmerchant</module>
         <module>youfanshop</module>
+        <module>ProductType</module>
+        <module>product</module>
     </modules>
     <properties>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>

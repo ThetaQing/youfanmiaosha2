@@ -6,16 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="youfanmerchant" />
         <module name="youfanshop" />
         <module name="youfanRegisterCenter" />
-        <module name="youfanUser" />
+        <module name="product" />
         <module name="youfanCommon" />
-        <module name="youfanmerchant" />
+        <module name="ProductType" />
+        <module name="youfanUser" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ProductType" options="-parameters" />
+      <module name="product" options="-parameters" />
       <module name="youfanCommon" options="-parameters" />
       <module name="youfanRegisterCenter" options="-parameters" />
       <module name="youfanUser" options="-parameters" />

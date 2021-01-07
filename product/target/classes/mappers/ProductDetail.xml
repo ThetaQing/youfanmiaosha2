@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.com.youfan.mapper.ProductInfoMapper">
+
+
+
+    <insert id="saveProductDetailInfo" parameterType="com.youfan.entity.ProductDetail">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into productDetail(productId,productPlace,productRand,productDescription,productWeight,productdetailPictureUrl,productSpecificationAndPack)
+        value(#{productId},#{productPlace},#{productRand},#{productDescription},#{productWeight},#{productdetailPictureUrl},#{productSpecificationAndPack})
+    </insert>
+
+<!--    <select id="listShopInfoBy" parameterType="com.youfan.vo.ShopInfoVo" resultType="com.youfan.entity.ShopInfo">-->
+<!--        select * from youfanshop-->
+<!--        <where>-->
+<!--            <include refid="shopInfoCondition"></include>-->
+<!--        </where>-->
+<!--    </select>-->
+
+<!--    <sql id="shopInfoCondition" >-->
+<!--        <if test="shopInfoCondition != null">-->
+<!--            <if test="shopInfoCondition.shopName!=null and shopInfoCondition.shopName!=''">-->
+<!--                and shopName = "${shopInfoCondition.shopName}"-->
+<!--            </if>-->
+<!--            <if test="shopInfoCondition.state!=null and shopInfoCondition.state!=''">-->
+<!--                and state = "${shopInfoCondition.state}"-->
+<!--            </if>-->
+<!--        </if>-->
+<!--    </sql>-->
+
+<!--    <update id="updateInfoBy" parameterType="com.youfan.entity.ShopInfo">-->
+<!--        update youfanshop set state = #{state} where id = #{id}-->
+<!--    </update>-->
+
+
+</mapper>
+
+
+
+

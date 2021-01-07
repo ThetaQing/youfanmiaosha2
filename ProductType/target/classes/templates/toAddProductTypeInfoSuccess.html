@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>商品名称</td>
+        <td>商品描述</td>
+        <td>父类ID</td>
+        <td>商品等级</td>
+
+    </tr>
+    <tr>
+        <td><span th:text="${productTypeInfo.producttypeName}"/></td>
+        <td><span th:text="${productTypeInfo.producttypeDescription}"/></td>
+        <td><span th:text="${productTypeInfo.parentid}"/></td>
+        <td><span th:text="${productTypeInfo.grade}"/></td>
+
+    </tr>
+</table>
+<span th:text="${error}"/>
+</body>
+</html>
