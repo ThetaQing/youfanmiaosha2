@@ -9,6 +9,7 @@
         <module name="youfanmerchant" />
         <module name="youfanshop" />
         <module name="youfanRegisterCenter" />
+        <module name="SeckillProduct" />
         <module name="product" />
         <module name="youfanCommon" />
         <module name="ProductType" />
@@ -19,6 +20,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ProductType" options="-parameters" />
+      <module name="SeckillProduct" options="-parameters" />
       <module name="product" options="-parameters" />
       <module name="youfanCommon" options="-parameters" />
       <module name="youfanRegisterCenter" options="-parameters" />

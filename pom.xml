@@ -16,6 +16,7 @@
         <module>youfanshop</module>
         <module>ProductType</module>
         <module>product</module>
+        <module>SeckillProduct</module>
     </modules>
     <properties>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>

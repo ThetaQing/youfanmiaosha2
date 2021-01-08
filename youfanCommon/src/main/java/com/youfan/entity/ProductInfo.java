@@ -17,6 +17,15 @@ public class ProductInfo {
     private int merchantId;
     private int productTypeid;
     private int productInventory;
+    private int shopId;  // 商品所在商铺的id
+
+    public int getShopId() {
+        return shopId;
+    }
+
+    public void setShopId(int shopId) {
+        this.shopId = shopId;
+    }
 
     public int getId() {
         return id;
@@ -123,7 +132,7 @@ public class ProductInfo {
     }
 
     @Override
-    public String toString() {
+    public String  toString() {
         return "ProductInfo{" +
                 "id=" + id +
                 ", productTitle='" + productTitle + '\'' +

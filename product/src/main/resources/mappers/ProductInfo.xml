@@ -12,27 +12,37 @@
         value(#{productTitle},#{productName},#{productPictureUrl},#{productPrice},#{productDiscounts},#{createTime},#{state},#{approveTime},#{merchantId},#{productInventory})
     </insert>
 
-<!--    <select id="listShopInfoBy" parameterType="com.youfan.vo.ShopInfoVo" resultType="com.youfan.entity.ShopInfo">-->
-<!--        select * from youfanshop-->
-<!--        <where>-->
-<!--            <include refid="shopInfoCondition"></include>-->
-<!--        </where>-->
-<!--    </select>-->
+    <select id="listProductInfoBy" parameterType="com.youfan.vo.ProductInfoVo" resultType="com.youfan.entity.ProductInfo">
+        select * from productinfo
+        <where>
+            <include refid="productInfoCondition"></include>
+        </where>
+    </select>
 
-<!--    <sql id="shopInfoCondition" >-->
-<!--        <if test="shopInfoCondition != null">-->
-<!--            <if test="shopInfoCondition.shopName!=null and shopInfoCondition.shopName!=''">-->
-<!--                and shopName = "${shopInfoCondition.shopName}"-->
-<!--            </if>-->
-<!--            <if test="shopInfoCondition.state!=null and shopInfoCondition.state!=''">-->
-<!--                and state = "${shopInfoCondition.state}"-->
-<!--            </if>-->
-<!--        </if>-->
-<!--    </sql>-->
+    <sql id="productInfoCondition" >
+        <if test="productInfoCondition != null">
+            <if test="productInfoCondition.productName!=null and productInfoCondition.productName!=''">
+                and productName = "${productInfoCondition.productName}"
+            </if>
+            <if test="productInfoCondition.state!=null and productInfoCondition.state!=''">
+                and state = "${productInfoCondition.state}"
+            </if>
+            <if test="productInfoCondition.shopId!=null and productInfoCondition.shopId!=''">
+                and shopId = "${productInfoCondition.shopId}"
+            </if>
+        </if>
+    </sql>
 
-<!--    <update id="updateInfoBy" parameterType="com.youfan.entity.ShopInfo">-->
-<!--        update youfanshop set state = #{state} where id = #{id}-->
-<!--    </update>-->
+    <update id="updateProductInfo" parameterType="com.youfan.entity.ProductInfo">
+        <choose>
+            <when test="approveTime!=null">
+                UPDATE productinfo set state = #{state},updateTime=#{updateTime},approveTime=#{approveTime} where id = #{id}
+            </when>
+            <otherwise>
+                UPDATE productinfo set state = #{state},updateTime=#{updateTime} where id = #{id}
+            </otherwise>
+        </choose>
+    </update>
 
 
 </mapper>
