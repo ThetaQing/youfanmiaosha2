@@ -2,6 +2,7 @@ package com.youfan.service;
 
 import com.youfan.entity.ProductInfo;
 import com.youfan.form.ProductForm;
+import com.youfan.vo.ProductInfoCondition;
 import com.youfan.vo.ProductInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,10 +35,16 @@ public class ProductInfoService {
         productInfoDao.saveProductInfo(productInfo);
     }
 
-    public List<ProductInfo> listProductInfoBy(ProductInfoVo productInfoVo){
-        if(productInfoVo == null){
-            productInfoVo = new ProductInfoVo();
+    public List<ProductInfo> listProductInfoBy(int shopId){
+        ProductInfoVo productInfoVo = new ProductInfoVo();
+        if(shopId != -1){
+            ProductInfoCondition productInfoCondition = new ProductInfoCondition();
+            productInfoCondition.setShopId(shopId);
+            productInfoCondition.setState(1);
+            productInfoVo.setProductInfoCondition(productInfoCondition);
         }
+
+
         return productInfoDao.listProductInfoBy(productInfoVo);
     }
 
@@ -50,5 +57,9 @@ public class ProductInfoService {
         productInfoDao.updateProductInfo(productInfo);
     }
 
+
+    public ProductInfo findProductById(int id){
+        return productInfoDao.findProductById(id);
+    }
 
 }

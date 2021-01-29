@@ -77,8 +77,12 @@ public class ProductControl {
      */
     @RequestMapping(value = "listProduct", method = RequestMethod.GET)
     public String listProduct(Model model){
+        System.out.println("productControl/listProduct");
+        System.out.println("productControl/listProduct");
+        System.out.println("productControl/listProduct");
+        System.out.println("productControl/listProduct");
 
-        List<ProductInfo> listProductInfoBy = productInfoService.listProductInfoBy(null);
+        List<ProductInfo> listProductInfoBy = productInfoService.listProductInfoBy(-1);
         model.addAttribute("listProduct",listProductInfoBy);
         return "listProduct";
 

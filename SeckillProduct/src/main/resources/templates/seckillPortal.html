@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
@@ -9,26 +9,30 @@
     <tr>
         <td>商品标题</td>
         <td>商品名称</td>
+        <td>秒杀价格</td>
         <td>商品价格</td>
-        <td>商品优惠价</td>
+        <td>秒杀数量</td>
+        <td>秒杀库存数量</td>
         <td>创建时间</td>
-        <td>审核时间</td>
-        <td>商品库存</td>
-         <td>操作</td>
+        <td>开始时间</td>
+        <td>结束时间</td>
+         <td>商家ID</td>
+
 
     </tr>
-    <tr th:each="entity:${listProduct}">
+    <tr th:each="entity:${seckillProductInfos}">
         <td><span th:text="${entity.productTitle}"/></td>
         <td><span th:text="${entity.productName}"/></td>
+        <td><span th:text="${entity.seckillPrice}"/></td>
         <td><span th:text="${entity.productPrice}"/></td>
-        <td><span th:text="${entity.productDiscounts}"/></td>
+        <td><span th:text="${entity.seckillNum}"/></td>
+        <td><span th:text="${entity.seckillInventory}"/></td>
         <td><span th:text="${entity.createTime}"/></td>
-        <td><span th:text="${entity.approveTime}"/></td>
-        <td><span th:text="${entity.productInventory}"/></td>
+        <td><span th:text="${entity.startTime}"/></td>
+        <td><span th:text="${entity.endTime}"/></td>
+        <td><span th:text="${entity.shopId}"/></td>
 <!--        申请状态：0申请中，1审核通过，2退回，3上架，4下架-->
-        <td>
-           <a href="#" th:href="@{/seckillProductControl/preSaveSeckillProduct(id=${entity.id})}" >发布秒杀商品</a>
-        </td>
+
     </tr>
 </table>
 </body>

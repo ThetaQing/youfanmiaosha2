@@ -22,4 +22,7 @@ public class ProductInfoDao {
     public void updateProductInfo(ProductInfo productInfo){
         productInfoMapper.updateProductInfo(productInfo);
     }
+    public ProductInfo findProductById(int id){
+        return productInfoMapper.findProductById(id);
+    }
 }

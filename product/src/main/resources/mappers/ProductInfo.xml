@@ -45,6 +45,10 @@
     </update>
 
 
+    <select id="findProductById" parameterType="int" resultType="com.youfan.entity.ProductInfo">
+        select * from productinfo where id = #{id}
+    </select>
+
 </mapper>
 
 

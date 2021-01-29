@@ -36,13 +36,14 @@ public class ProductOutControl {
      */
     @RequestMapping(value = "listProductBy", method = RequestMethod.POST)
     public List<ProductInfo> listProductBy(int shopId,Model model){
-        ProductInfoVo productInfoVo = new ProductInfoVo();
-        ProductInfoCondition productInfoCondition = new ProductInfoCondition();
-        productInfoCondition.setShopId(shopId);
-        productInfoVo.setProductInfoCondition(productInfoCondition);
-
-        List<ProductInfo> listProductInfoBy = productInfoService.listProductInfoBy(productInfoVo);
+        List<ProductInfo> listProductInfoBy = productInfoService.listProductInfoBy(shopId);
         return listProductInfoBy;
+    }
+    @RequestMapping(value = "findProductById", method = RequestMethod.POST)
+    public ProductInfo findProductById(int id){
+
+        ProductInfo productInfo = productInfoService.findProductById(id);
+        return productInfo;
     }
 
 
